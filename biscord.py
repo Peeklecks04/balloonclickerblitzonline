@@ -15,4 +15,5 @@ def create_post():
     db['posts'].insert(post_dictionary)
 
     return redirect('/')
-app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
