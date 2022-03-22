@@ -1,0 +1,14 @@
+<h1> ooga booga </h1>
+
+<h2> posts </h2>
+
+<ul>
+  {% for post in posts %}
+  <li>{{post}}</li>
+  {% endfor %}
+</ul>
+
+<form action="/create_post" method="post">
+:)<input type="text" name="message">
+<input type="submit">
+</form>
