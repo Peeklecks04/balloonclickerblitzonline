@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body { 
+    font-family: 'Roboto', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1024px;
+    min-width: 256px;
+    padding-right: 24px;
+    padding-left: 24px;
+    padding-right: 8px;
+    padding-top: 8px;
+    padding-bottom: 24px;
+    border: 2px solid rebeccapurple;
+    border-radius: 16px;
+    }
+    
+    body {background-color: white;
+    color: #111111;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1024px;
+    min-width: 256px;
+    }
+    nav ul {
+        list-style-type: none;
+        background-color: midnightblue;
+        border: 4px solid black;
+        border-radius: 10px;
+        font-family: sans-serif;
+        font-weight: bold;
+        padding: 16px;
+    }
+    nav ul li {
+        display: inline;
+        border-right: 2px solid white;
+    padding-right: 8px;
+    padding-left: 8px;
+    }
+    nav ul li :last-child {
+    border-right:none;
+    }
+    nav ul li a {
+        text-decoration: none;
+    color: whitesmoke;
+    }
+    html {
+        background: black url(backdrop.png);
+    }
+    img {
+        border: 5px solid rebeccapurple;
+      }
