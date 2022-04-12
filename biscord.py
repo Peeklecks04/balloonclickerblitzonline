@@ -3,9 +3,9 @@ import dataset
 
 app = Flask(__name__)
 db = dataset.connect('sqlite:///biscord.db')
-@app.route('/')
+@app.route('/chatroom')
 def index ():
-    return render_template('index.html', posts=db['posts'])
+    return render_template('caht.html', posts=db['posts'])
 
 @app.route('/create_post', methods=['post'])
 def create_post():
@@ -14,6 +14,13 @@ def create_post():
     }
     db['posts'].insert(post_dictionary)
 
-    return redirect('/')
+    return redirect('/chatroom')
+
+@app.route('/leaderboard')
+def index ():
+    return render_template('leaderboard.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
+
