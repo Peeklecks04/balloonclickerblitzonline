@@ -2,16 +2,17 @@
 <body>
 <html>
 <nav>
-    <ul>
-      <li><a href="/home">Home</a></li> 
-    <li><a href="/chatroom">Chatroom</a></li>   
-      <li><a href="/leaderboard">Leaderboard</a></li>   
-      </ul>
-    </nav>
+  <ul>
+    <li><a href="/">Home</a></li> 
+    <li><a href="/login">Login</a></li>  
+  <li><a href="/chatroom">Chatroom</a></li>   
+    <li><a href="/leaderboard">Leaderboard</a></li>   
+    </ul>
+  </nav>
 <html>
-<h1> ooga booga </h1>
+<h1> Chatroom </h1>
 
-<h2> posts </h2>
+<h3> Please be civilised! Inappropriate behaviour is forbidden. Repeated offenders will be punished! </h3>
 
 <ul>
   {% for post in posts %}
@@ -20,7 +21,7 @@
 </ul>
 
 <form action="/create_post" method="post">
-:(<input type="text" name="message">
+<input type="text" name="message">
 <input type="submit">
 </form>
 
