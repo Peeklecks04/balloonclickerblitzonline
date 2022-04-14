@@ -49,6 +49,11 @@ def create_score():
 def home ():
     return render_template('home.html')
 
+@app.route('/myaccount')
+def myaccount ():
+    return render_template('myaccount.html')
+
+
 @app.route('/create_post', methods=['post'])
 def create_post():
     post_dictionary = {
@@ -58,6 +63,12 @@ def create_post():
     db['posts'].insert(post_dictionary)
 
     return redirect('/chatroom')
+
+@app.route('/setpfp', methods=['post'])
+def setpfp():
+    file = request.files['file']
+    filename_to_save = 'static/uploads/' + file.filename
+    return render_template('myaccount.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
