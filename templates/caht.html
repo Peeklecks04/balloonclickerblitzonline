@@ -19,7 +19,7 @@
 
 <ul>
   {% for post in posts %}
-  <li>{{post['message']}}</li>
+  <li><b>{{post['username']}}:</b> {{post['message']}} </li>
   {% endfor %}
 </ul>
 

@@ -10,14 +10,6 @@ app.secret_key = "Regigigas (Japanese: レジギガス Regigigas) is a Normal-ty
 def chatroom ():
     return render_template('caht.html', posts=db['posts'])
 
-@app.route('/create_post', methods=['post'])
-def create_post():
-    post_dictionary = {
-        'message' : request.form['message']
-    }
-    db['posts'].insert(post_dictionary)
-
-    return redirect('/chatroom')
 
 @app.route('/leaderboard')
 def leaderboard ():
@@ -32,6 +24,18 @@ def login_post ():
     session['username']= (request.form['username'])
     return redirect('/')
 
+@app.route('/logout')
+def logout():
+    if 'username' in session:
+      del session ['username']
+    return render_template('login.html')
+
+@app.route('/theme')
+def theme ():
+    session['theme']
+    return 
+
+
 
 @app.route('/create_score', methods=['post'])
 def create_score():
@@ -45,6 +49,15 @@ def create_score():
 def home ():
     return render_template('home.html')
 
+@app.route('/create_post', methods=['post'])
+def create_post():
+    post_dictionary = {
+        'message' : request.form['message'],
+        'username' : session['username']
+    }
+    db['posts'].insert(post_dictionary)
+
+    return redirect('/chatroom')
 
 if __name__ == '__main__':
     app.run(debug=True)
