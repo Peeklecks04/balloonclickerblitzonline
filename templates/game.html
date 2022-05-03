@@ -12,5 +12,13 @@
     </ul>
   </nav>
 <html>
+    {% if 'username' in session %}        
+    You are logged in as {{session['username']}}!
+    
+    {% else %}
+    You are currently logged out!
+    
+    {% endif %}
+
 
  You are logged in as {{session['username']}}!
