@@ -47,6 +47,3 @@ body {
     html {
         background: black url(backdrop.png);
     }
-    img {
-        border: 5px solid darkcyan;
-      }
