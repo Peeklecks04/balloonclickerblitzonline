@@ -53,6 +53,9 @@ def home ():
 def myaccount ():
     return render_template('myaccount.html')
 
+@app.route('/game')
+def game ():
+    return render_template('game.html')
 
 @app.route('/create_post', methods=['post'])
 def create_post():
