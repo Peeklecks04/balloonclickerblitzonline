@@ -13,7 +13,13 @@
   </nav>
 <html>
 
- You are logged in as {{session['username']}}!
+  {% if 'username' in session %}        
+  You are logged in as {{session['username']}}!
+  
+  {% else %}
+  You are currently logged out! You need to log in to use the chat.
+  
+  {% endif %}
 
 <h1> Chatroom </h1>
 
@@ -29,7 +35,10 @@
 <input type="text" name="message">
 <input type="submit">
 </form>
-
-
+<p>
+<b>{% if 'username' not in session %}        
+You aren't logged in! You can't use the chat while signed out!
+{% endif %}</b>
+</p>
 </body>
 </html>
