@@ -1,6 +1,20 @@
 <link type="text/css" rel="stylesheet" href="static/stylesheet.css">
 <html>
 <head>
+  <style>
+    html{
+      height: 100%;
+    }
+    body{
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .game{
+      flex-grow: 1;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
 <nav>
@@ -13,7 +27,7 @@
     <li><a href="/myaccount">My Account</a></li>
     </ul>
 </nav>
-<iframe src="https://balloonclickerblitz.netlify.app/" height="200" width="300" title="Iframe Example"></iframe>
+<iframe class="game" src="https://balloonclickerblitz.netlify.app/" height="200" width="300" title="Iframe Example"></iframe>
 </body>
 </html>
 
