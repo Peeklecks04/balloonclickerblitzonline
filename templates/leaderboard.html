@@ -9,8 +9,14 @@
       <li><a href="/leaderboard">Leaderboard</a></li>   
       </ul>
     </nav>
-    {{session['username']}}
 
+    {% if 'username' in session %}        
+    You are logged in as {{session['username']}}!
+    
+    {% else %}
+    You are currently logged out! 
+    
+    {% endif %}
 
 <h1>Leaderboard</h1>
 <h3>Share your best scores and compare them to other users from across the world!</h3>

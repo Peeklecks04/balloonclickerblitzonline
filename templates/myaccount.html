@@ -9,7 +9,15 @@
     <li><a href="/leaderboard">Leaderboard</a></li>   
     </ul>
   </nav>
+  {% if 'username' in session %}        
+  You are logged in as {{session['username']}}!
+  
+  {% else %}
+  You are currently logged out!
+  
+  {% endif %}
 <h1>Customise your account</h1>
+
 
 
 <form action="/setpfp"
