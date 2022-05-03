@@ -26,9 +26,18 @@
     <li><a href="/leaderboard">Leaderboard</a></li>
     <li><a href="/myaccount">My Account</a></li>
     </ul>
-</nav>
+  </nav>
+
 <iframe class="game" src="https://balloonclickerblitz.netlify.app/" height="200" width="300" title="Iframe Example"></iframe>
+
+<p></p>
+{% if 'username' in session %}        
+You are logged in as {{session['username']}}!
+
+{% else %}
+You are currently logged out!
+
+{% endif %}
 </body>
 </html>
 
- You are logged in as {{session['username']}}!

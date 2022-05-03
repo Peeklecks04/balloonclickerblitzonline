@@ -11,6 +11,7 @@
     <li><a href="/myaccount">My Account</a></li>  
     </ul>
   </nav>
+
 <html>
 
   {% if 'username' in session %}        
@@ -40,5 +41,8 @@
 You aren't logged in! You can't use the chat while signed out!
 {% endif %}</b>
 </p>
+
+  <iframe src="/static/breeze.mp3" allow="autoplay" style="display:none" id="iframeAudio" loop>
+</iframe> 
 </body>
 </html>
