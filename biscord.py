@@ -61,7 +61,8 @@ def game ():
 def create_post():
     post_dictionary = {
         'message' : request.form['message'],
-        'username' : session['username']
+        'username' : session['username'],
+        'picture' : session['profilepic']
     }
     db['posts'].insert(post_dictionary)
 
@@ -71,7 +72,13 @@ def create_post():
 def setpfp():
     file = request.files['file']
     filename_to_save = 'static/uploads/' + file.filename
+
+    file.save(filename_to_save)
+
+    session['profilepic'] = filename_to_save
+
     return render_template('myaccount.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
