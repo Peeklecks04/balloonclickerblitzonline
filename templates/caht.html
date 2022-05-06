@@ -26,7 +26,10 @@
 
 <ul>
   {% for post in posts %}
-  <li><img src="{{post[picture]}}" class="profilepic"><b>{{post['username']}}:</b> {{post['message']}} </li>
+  <li class="pfp">
+    <img src="{{post['picture']}}" class="profilepic">
+    <b class="usernamespace">{{post['username']}}:</b> {{post['message']}}
+  </li>
   {% endfor %}
 </ul>
 
@@ -44,3 +47,7 @@ You aren't logged in! You can't use the chat while signed out!
 </iframe> 
 </body>
 </html>
+
+debug
+
+{{session}}

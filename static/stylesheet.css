@@ -48,4 +48,21 @@ body {
         background: black
     }
 
-    
+    .profilepic {
+        height: 50px;
+        width: 50px;
+        border: 2px #3b0069 solid;
+        margin: 3px;
+    }
+
+    .pfp {
+        border: #a1a1a1;
+        display: flex;
+        align-items: center;
+
+    }
+
+    .usernamespace {
+        margin: 1.5px;
+        padding-right: 3PX;
+    } 
