@@ -13,7 +13,7 @@ def chatroom ():
 
 @app.route('/leaderboard')
 def leaderboard ():
-    return render_template('leaderboard.html', posts=db['leaderboard'])
+    return render_template('leaderboard.html', scores=db['leaderboard'])
 
 @app.route('/login')
 def login ():
@@ -40,9 +40,12 @@ def theme ():
 @app.route('/create_score', methods=['post'])
 def create_score():
     score_dictionary = {
-        'sendscore' : request.form['sendscore']
+        'sendscore' : request.form['sendscore'],
+        'username' : session['username'],
+        'picture' : session['profilepic']
     }
     db['leaderboard'].insert(score_dictionary)
+    return redirect ('/leaderboard')
 
 
 @app.route('/')

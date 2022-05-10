@@ -11,7 +11,7 @@
       <li><a href="/myaccount">My Account</a></li>
       </ul>
     </nav>
-
+    
     {% if 'username' in session %}        
     You are logged in as {{session['username']}}!
     
@@ -22,3 +22,15 @@
 
 <h1>Leaderboard</h1>
 <h3>Share your best scores and compare them to other users from across the world!</h3>
+<ul>
+  {% for post in scores %}
+  <li class="pfp">
+    <img src="{{post['picture']}}" class="profilepic">
+    <b class="usernamespace">{{post['username']}}:</b> {{post['sendscore']}}
+  </li>
+  {% endfor %}
+</ul>
+<form action="/create_score" method="post">
+  <input type="number" name="sendscore">
+  <input type="submit">
+</form>
